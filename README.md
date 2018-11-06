@@ -39,7 +39,7 @@
 
 申请TF需要附上购买收据,并在邮件标题注明申请TF。
 
-**`注意：本文撰写时是使用的TestFlight版本Build400，如果跟你手上的版本不一样请等待商店正式版`**
+**`注意：本文撰写时是使用的TestFlight版本Build596，如果跟你手上的版本不一样请等待商店正式版`**
 
 ---
 
@@ -98,25 +98,25 @@
 
     Quantumult的出站方式有三种
 
-    GLOBAL：全部出站流量走代理服务器，不管你规则怎么写都会走代理服务器。
+    GLOBAL（全局代理）：全部出站流量走代理服务器，不管你规则怎么写都会走代理服务器。
 
-    AUTO：出站流量按照规则配置自动规划出站路径。
+    AUTO（自动分流）：出站流量按照规则配置自动规划出站路径。
 
-    DIRECT：全部出站流量走直接连接，不管你规则怎么写都会走直接连接。
+    DIRECT（全局直连）：全部出站流量走直接连接，不管你规则怎么写都会走直接连接。
 
 * **Q**：Quantumult的策略组都是什么含义？
 
-     **A**：Service Set Identifier Policy：此组可以给Wi-Fi和流量指定不同的策略(可以是静态策略，也可以是节点测速)或节点或者内置基础策略(PROXY DIRECT REJECT)。也可以针对不同的Wi-Fi SSID名称指定不同配置方式。
+     **A**：Service Set Identifier Policy（环境策略）：此组可以给Wi-Fi和流量指定不同的策略(可以是静态策略，也可以是节点测速)或节点或者内置基础策略(PROXY DIRECT REJECT)。也可以针对不同的Wi-Fi SSID名称指定不同配置方式。
 
-    Latency Policy：此组是节点测速分组，可以选择多个节点，根据测速结果选择ping值最低的节点使用(注意Latency Policy并不能检测节点带宽,只能检测节点ping值,建立此组时请根据自身节点实际情况自行添加)。
+    Latency Policy（延迟策略）：此组是节点测速分组，可以选择多个节点，根据测速结果选择ping值最低的节点使用(注意Latency Policy并不能检测节点带宽,只能检测节点ping值,建立此组时请根据自身节点实际情况自行添加)。
 
-     Static Policy：此组是静态策略分组，可以选择 SSID分组 Auto分组或者任意节点，也可以选择内置基础策略(PROXY DIRECT REJECT)。使用时，手动选择需要的策略即可。
+     Static Policy（静态策略）：此组是静态策略分组，可以选择 SSID分组 Auto分组或者任意节点，也可以选择内置基础策略(PROXY DIRECT REJECT)。使用时，手动选择需要的策略即可。
 
      在规则中，可以指定以上三种策略的名称以应对不同的应用场景。
 
 * **Q**：Quantumult不用策略组能用节点测速么？
 
-    **A**：可以，Quantumult提供了简易的测速机制，可以在不使用策略组的情况下开启最多10个节点测速并选择最优节点使用。开启方式在Settings→Policy→PROXY→URL Latency Test中配置。这种方式规则中需要走节点服务器的网址配置为PROXY即可，这种配置方式相对简单能满足大部分人的需求，如果不想开启策略组或者对策略组不是很了解的人，推荐使用这种配置方式。
+    **A**：可以，Quantumult提供了简易的测速机制，可以在不使用策略组的情况下开启最多10个节点测速并选择最优节点使用。开启方式在Settings（设置）→Policy（策略）→PROXY→URL Latency Test中配置。这种方式规则中需要走节点服务器的网址配置为PROXY即可，这种配置方式相对简单能满足大部分人的需求，如果不想开启策略组或者对策略组不是很了解的人，推荐使用这种配置方式。
 
 * **Q**:为什么我Quantumult点击启动时会有提示?
 
@@ -138,10 +138,10 @@
 
 **本页面各选项卡说明**
 
-    Home (主页面 显示连接状态 连接时间 流量使用情况 节点信息等信息)
-    Settings (设定页面 添加节点 订阅设定 规则列表 UDP Relay等)
-    Statistics (状态显示页面 显示浏览历史 详细流量使用情况 策略组状态 服务器延迟统计等)
-    More (更多选项 显示其它信息 联系作者 备份 辅助设定等)
+    主页 (主页面 显示连接状态 连接时间 流量使用情况 节点信息等信息)
+    设置 (设置页面 添加节点 订阅设定 规则列表 UDP Relay等)
+    统计 (状态显示页面 显示浏览历史 详细流量使用情况 策略组状态 服务器延迟统计等)
+    更多 (更多选项 显示其它信息 联系作者 备份 辅助设定等)
 
 * 添加节点
 	 
@@ -205,8 +205,6 @@
 
     Update Option 如果勾选该选项,在更新节点信息时只会更新本地已经添加的节点,新的节点信息不会被更新进来
 
-    Delete Option 如果勾选该选项,在更新节点信息时如果服务器已经将某些节点删除那么本地节点也会被删除
-
     Additional Option 如果勾选该选项,在更新节点信息时,不会更新本地节点名称
     
    **本页推荐只勾选Delete Option选项其它保持原样不变**
@@ -237,7 +235,7 @@
    **本页推荐勾选 Filter Action选项**
 
    推荐订阅规则地址 
-[https://raw.githubusercontent.com/lhie1/Surge/master/Quantumult.conf](https://raw.githubusercontent.com/lhie1/Surge/master/Quantumult.conf)
+[https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf](https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf)
 
    添加完毕后点击Save保存.
 
@@ -266,7 +264,7 @@
    **本页推荐勾选 Including Host Names**
 
    推荐订阅Rejection地址 
-[https://raw.githubusercontent.com/lhie1/Surge/master/Quantumult_URL.conf](https://raw.githubusercontent.com/lhie1/Surge/master/Quantumult_URL.conf)
+[https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_URL.conf](https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_URL.conf)
 
    添加完毕后点击Save保存.
 
