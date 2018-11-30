@@ -50,7 +50,11 @@
 
 9. 服务器订阅即选择Server（服务器），输入名字（随意），填入地址，点击右上角Save（保存）。同规则一样，左滑选项，选择Update（更新）即可。
 
-说明：Filter（分流）是为了分流或指定代理或直连，也能屏蔽广告。Rejection（链接阻止）是补充屏蔽广告用的。
+说明：
+Filter（分流）是为了分流或指定代理或直连，也能屏蔽广告。Rejection（链接阻止）是补充屏蔽广告用的。
+如果你觉得9000条分流太多，可将第3步的地址改成 https://raw.githubusercontent.com/shigalin/Config/master/Quantumult.conf 。
+服务器订阅（SSR）也是同理。
+
 
 ### 前言
 
