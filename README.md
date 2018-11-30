@@ -26,6 +26,31 @@
     * 服务器ping测试(暂未添加)
     
 ---
+### 说明
+
+此教程已经明显落后，比如中英文界面及功能跟最新版也不相同。原作者没有更新，我也没有动力，可以Google一些新的教程。我先将大致的使用说一下
+
+#Quantumult 规则使用：
+
+1. 进入Settings（设置） — Favorites（订阅）
+
+2. 选择右上角添加，Server（服务器订阅），Filter（分流），Rejection（链接阻止）
+
+3. 选择 Filter （分流），Name（名称）随意，URL（链接）填入 https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult.conf  ，看需求勾选个性化
+
+4. 如果开启了HTTPS解密进入第5步，HTTPS解密【非必要】
+
+5. 选择 Rejection（链接阻止） ，Name（名称）随意 ，URL（链接）填入 https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_URL.conf , 勾选Including Host Names（包含主机名）
+
+6. 【规则生效或者更新规则】：在Favorites（订阅）的Filter（分流）订阅和Rejection（链接阻止）订阅多了订阅的选项，左滑选项，选择Replace（替换）替换，选择相应的服务器或者Policy（策略）
+
+7. 在Filter（分流）替换过程中，注意选择【Apple、PayPal服务】是选择直连或者代理，包含iCloud服务和App Store下载等。其他如果不需要默认选项即可
+
+8. 需要指定更多服务的Policy（策略）？添加Filter（分流），必须勾选个性化，操作不是Replace（替换），而是【Append】（增加）。地址：https://raw.githubusercontent.com/lhie1/Rules/master/Quantumult/Quantumult_Extra.conf ，小众的Policy包括：TVB, Viu, Spotify, BBC, Hulu
+
+9. 服务器订阅即选择Server（服务器），输入名字（随意），填入地址，点击右上角Save（保存）。同规则一样，左滑选项，选择Update（更新）即可。
+
+说明：Filter（分流）是为了分流或指定代理或直连，也能屏蔽广告。Rejection（链接阻止）是补充屏蔽广告用的。
 
 ### 前言
 
